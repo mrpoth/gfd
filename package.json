@@ -29,6 +29,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "v-tooltip": "^2.0.3"
+        "v-tooltip": "^2.0.3",
+        "vue-cosha": "^0.2.2"
     }
 }

@@ -9,7 +9,7 @@
       >
         <div v-if="recent_game.cover">
           <a :href="`/game/${recent_game.slug}`">
-            <img :src="replaceThumbWithBiggerImage(recent_game.cover.url)" />
+            <img :src="replaceThumbWithBiggerImage(recent_game.cover.url)"  v-cosha/>
           </a>
         </div>
         <div v-else>
@@ -46,7 +46,7 @@
       >
         <div v-if="popular_game.cover">
           <a :href="`/game/${popular_game.slug}`">
-            <img :src="replaceThumbWithBiggerImage(popular_game.cover.url)" />
+            <img :src="replaceThumbWithBiggerImage(popular_game.cover.url)" v-cosha />
           </a>
         </div>
         <div v-else>

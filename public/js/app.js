@@ -3781,6 +3781,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -52848,6 +52849,123 @@ if (GlobalVue) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-cosha/dist/vue-cosha.esm.js":
+/*!******************************************************!*\
+  !*** ./node_modules/vue-cosha/dist/vue-cosha.esm.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var defaults = {
+  blur: "5px",
+  brightness: 1,
+  saturation: 1,
+  y: 0,
+  x: 0
+};
+
+const createWrapperClass = className => {
+  const created = document.getElementById(`${className}-class`);
+
+  if (created) {
+    created.parentElement.removeChild(created);
+  }
+
+  const styles = document.createElement("style");
+  styles.setAttribute("id", `${className}-class`);
+  styles.textContent = `
+      .${className}-wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+  `;
+  document.head.appendChild(styles);
+};
+
+const createCloneStyles = (currentStyles, options) => {
+  const {
+    blur,
+    brightness,
+    saturation,
+    x,
+    y,
+    index
+  } = options;
+  const mergedStyles = currentStyles.cssText + `
+    position: absolute;
+    filter: blur(${blur}) brightness(${brightness}) saturate(${saturation});
+    z-index: -1;
+    transform: translate3d(${x}, ${y}, 0);
+  `;
+  return mergedStyles;
+};
+
+const className = "cosha";
+
+const cosha = (el, options, vnode) => {
+  if (!el) return console.warn("[vue-cosha]: Element doesn't exist!");
+  if (vnode.tag !== "img") return console.warn("[vue-cosha]: Directive must be on an image");
+  createWrapperClass(className);
+  const parent = el.parentNode;
+  const hasBeenCreated = parent.classList.contains(`${className}-wrapper`);
+
+  if (!hasBeenCreated) {
+    const wrapper = document.createElement("div");
+    const clonedNode = el.cloneNode(true);
+    wrapper.classList.add(`${className}-wrapper`);
+    clonedNode.classList.add(`${className}-clone`);
+    clonedNode.style.cssText = createCloneStyles(clonedNode.style, options);
+    clonedNode.setAttribute("alt", "");
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+    wrapper.appendChild(clonedNode);
+  }
+
+  if (hasBeenCreated) {
+    const clonedChild = [...el.parentNode.children].find(child => child.classList.contains(`${className}-clone`));
+    clonedChild.style.cssText = createCloneStyles(clonedChild.style, options);
+  }
+};
+
+var cosha$1 = (options => {
+  const mergedOptions = Object.assign(defaults, options);
+
+  const inserted = (el, {
+    value
+  }, vnode) => {
+    const mergedValues = Object.assign(mergedOptions, value);
+    return cosha(el, mergedValues, vnode);
+  };
+
+  const update = (el, {
+    value
+  }, vnode) => {
+    const mergedValues = Object.assign(mergedOptions, value);
+    return cosha(el, mergedValues, vnode);
+  };
+
+  return {
+    inserted,
+    update
+  };
+});
+
+const plugin = {
+  install(Vue, options) {
+    Vue.directive("cosha", cosha$1(options));
+  }
+
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (plugin);
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Jetstream/ActionMessage.vue?vue&type=template&id=bcb26626&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Jetstream/ActionMessage.vue?vue&type=template&id=bcb26626& ***!
@@ -55886,6 +56004,7 @@ var render = function() {
             ? _c("div", [
                 _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
                   _c("img", {
+                    directives: [{ name: "cosha", rawName: "v-cosha" }],
                     attrs: {
                       src: _vm.replaceThumbWithBiggerImage(
                         recent_game.cover.url
@@ -55959,6 +56078,7 @@ var render = function() {
             ? _c("div", [
                 _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
                   _c("img", {
+                    directives: [{ name: "cosha", rawName: "v-cosha" }],
                     attrs: {
                       src: _vm.replaceThumbWithBiggerImage(
                         popular_game.cover.url
@@ -56200,6 +56320,7 @@ var render = function() {
         [
           _vm.game.cover
             ? _c("img", {
+                directives: [{ name: "cosha", rawName: "v-cosha" }],
                 attrs: {
                   src: _vm.replaceThumbWithBiggerImage(_vm.game.cover.url)
                 }
@@ -69948,10 +70069,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/tester.scss":
-/*!***********************************!*\
-  !*** ./resources/css/tester.scss ***!
-  \***********************************/
+/***/ "./resources/css/main.scss":
+/*!*********************************!*\
+  !*** ./resources/css/main.scss ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -72632,9 +72753,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var portal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! portal-vue */ "./node_modules/portal-vue/dist/portal-vue.common.js");
 /* harmony import */ var portal_vue__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(portal_vue__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var v_tooltip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! v-tooltip */ "./node_modules/v-tooltip/dist/v-tooltip.esm.js");
+/* harmony import */ var vue_cosha__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-cosha */ "./node_modules/vue-cosha/dist/vue-cosha.esm.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 
 
 
@@ -72650,6 +72773,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_inertiajs_inertia_vue__WEBPACK_I
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(laravel_jetstream__WEBPACK_IMPORTED_MODULE_2__["InertiaForm"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(portal_vue__WEBPACK_IMPORTED_MODULE_3___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(v_tooltip__WEBPACK_IMPORTED_MODULE_4__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_cosha__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  blur: "5px",
+  brightness: 1,
+  saturation: 1,
+  x: 0,
+  y: 0
+});
 var app = document.getElementById('app');
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   render: function render(h) {
@@ -72699,14 +72829,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/tester.scss ./resources/css/app.css ***!
-  \***************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/main.scss ./resources/css/app.css ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /var/www/node/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /var/www/node/resources/css/tester.scss */"./resources/css/tester.scss");
+__webpack_require__(/*! /var/www/node/resources/css/main.scss */"./resources/css/main.scss");
 module.exports = __webpack_require__(/*! /var/www/node/resources/css/app.css */"./resources/css/app.css");
 
 

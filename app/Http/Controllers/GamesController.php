@@ -17,25 +17,13 @@ use App\Models\Wishlist;
 
 class GamesController extends Controller
 {
-    //
-
 
     public function index()
     {
 
-        $now = Carbon::now();
-        $seven_days_ago = Carbon::now()->subDays(7);
-        $one_year_ago = Carbon::now()->subYear(5);
+        $recent_games = Videogame::getRecentGames();
 
-        $recent_games = Game::whereBetween('first_release_date', $seven_days_ago, $now)->with(['cover' => ['url', 'image_id']])->limit(8)->get();
-
-        $popular_games = Game::whereBetween('first_release_date', $one_year_ago, $now)
-            ->where('aggregated_rating', '>', 0)
-            ->where('aggregated_rating_count', '>', '10')
-            ->orderBy('aggregated_rating', 'desc')
-            ->with(['cover' => ['url', 'image_id']])
-            ->limit(8)
-            ->get();
+        $popular_games = Videogame::getPopularGames();
 
 
         return Inertia::render('Games/Index', [
@@ -44,10 +32,6 @@ class GamesController extends Controller
         ]);
     }
 
-    public static function getBiggerCoverImages($url)
-    {
-        return str_replace("thumb", "cover_big", $url);
-    }
 
     public function storeToList(Request $request)
     {
@@ -106,12 +90,10 @@ class GamesController extends Controller
 
     public function singleGame(Request $request)
     {
-        $tenYearsAgo = Carbon::now()->subYear(10);
-        $now = Carbon::now();
 
         $input = $request->route('slug');
 
-        $game = Game::where('slug', '=', $input)->with(['similar_games', 'genres', 'cover' => ['url', 'image_id']])->get();
+        $game = Videogame::showSingleGame($input);
 
         return Inertia::render('Games/Single', [
             'game' => $game[0]

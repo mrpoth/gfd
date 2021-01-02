@@ -5,6 +5,7 @@
         <img
           v-if="game.cover"
           :src="replaceThumbWithBiggerImage(game.cover.url)"
+           v-cosha
         />
         <img
           v-else
