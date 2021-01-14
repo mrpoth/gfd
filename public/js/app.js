@@ -3445,6 +3445,58 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Mixins/removeFromLists */ "./resources/js/Mixins/removeFromLists.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [_Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  name: "GamesGrid",
+  props: {
+    games: Array,
+    collectionOption: String
+  },
+  data: function data() {
+    return {
+      disabled: false
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Index.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Index.vue?vue&type=script&lang=js& ***!
@@ -3536,14 +3588,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  data: function data() {
+    return {
+      error: "",
+      tooltipMessage: ""
+    };
+  },
   props: {
     recent_games: Array,
-    popular_games: Array,
-    error: String
+    popular_games: Array
   },
   methods: {
     replaceThumbWithBiggerImage: function replaceThumbWithBiggerImage(url) {
@@ -3552,16 +3616,7 @@ __webpack_require__.r(__webpack_exports__);
     formatDate: function formatDate(date) {
       var properDate = new Date(date);
       return properDate.toLocaleDateString();
-    } // displayOnClick() {
-    //   let targetId = event.target.id;
-    //   let selector = `#${targetId} + .collection-options`;
-    //   let collectionOptions = document.querySelector(selector);
-    //   collectionOptions.style.display =
-    //     collectionOptions.style.display === "inline-block"
-    //       ? "none"
-    //       : "inline-block";
-    // }
-
+    }
   }
 });
 
@@ -3578,12 +3633,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
-//
-//
-//
-//
-//
+/* harmony import */ var _Games_Components_GamesGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Games/Components/GamesGrid */ "./resources/js/Pages/Games/Components/GamesGrid.vue");
 //
 //
 //
@@ -3596,18 +3646,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  components: {
+    GamesGrid: _Games_Components_GamesGrid__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     library_games: Array
-  },
-  methods: {
-    replaceThumbWithBiggerImage: function replaceThumbWithBiggerImage(url) {
-      return url.replace("thumb", "cover_big");
-    },
-    formatDate: function formatDate(date) {
-      var properDate = new Date(date);
-      return properDate.toLocaleDateString();
-    }
   }
 });
 
@@ -3714,6 +3757,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
+/* harmony import */ var _Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Mixins/removeFromLists */ "./resources/js/Mixins/removeFromLists.js");
 //
 //
 //
@@ -3782,10 +3826,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"], _Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  data: function data() {
+    return {
+      error: ""
+    };
+  },
   props: {
     game: Object
   },
@@ -3813,12 +3866,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
-//
-//
-//
-//
-//
+/* harmony import */ var _Games_Components_GamesGrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Games/Components/GamesGrid */ "./resources/js/Pages/Games/Components/GamesGrid.vue");
 //
 //
 //
@@ -3831,18 +3879,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  components: {
+    GamesGrid: _Games_Components_GamesGrid__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     wishlist_games: Array
-  },
-  methods: {
-    replaceThumbWithBiggerImage: function replaceThumbWithBiggerImage(url) {
-      return url.replace("thumb", "cover_big");
-    },
-    formatDate: function formatDate(date) {
-      var properDate = new Date(date);
-      return properDate.toLocaleDateString();
-    }
   }
 });
 
@@ -53211,7 +53252,7 @@ var render = function() {
     "button",
     {
       staticClass:
-        "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
+        "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
       attrs: { type: _vm.type }
     },
     [_vm._t("default")],
@@ -53479,7 +53520,7 @@ var render = function() {
     "button",
     {
       staticClass:
-        "inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-600 transition ease-in-out duration-150",
+        "inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-gray uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-600 transition ease-in-out duration-150",
       attrs: { type: _vm.type }
     },
     [_vm._t("default")],
@@ -53877,15 +53918,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "label",
-    { staticClass: "block font-medium text-sm text-gray-700" },
-    [
-      _vm.value
-        ? _c("span", [_vm._v(_vm._s(_vm.value))])
-        : _c("span", [_vm._t("default")], 2)
-    ]
-  )
+  return _c("label", { staticClass: "block font-medium text-sm" }, [
+    _vm.value
+      ? _c("span", [_vm._v(_vm._s(_vm.value))])
+      : _c("span", [_vm._t("default")], 2)
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -54553,7 +54590,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "min-h-screen bg-gray-100" },
+    { staticClass: "min-h-screen" },
     [
       _c("nav", { staticClass: "bg-white border-b border-gray-100" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" }, [
@@ -55977,6 +56014,67 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "collection-grid" },
+      _vm._l(_vm.games, function(game, index) {
+        return _c("div", { key: game.id, staticClass: "flex-single" }, [
+          game.cover_url
+            ? _c("img", { attrs: { src: game.cover_url } })
+            : _c("img", {
+                attrs: {
+                  width: "90",
+                  height: "90",
+                  src:
+                    "https://cdn.pixabay.com/photo/2020/08/04/18/58/controller-5463628__340.png"
+                }
+              }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/game/" + game.slug } }, [
+            _c("h3", [_vm._v(_vm._s(game.name))])
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "add-to-collection",
+              on: {
+                click: function($event) {
+                  return _vm.removeFromList(game, _vm.collectionOption, index)
+                }
+              }
+            },
+            [_vm._v("\n        Remove\n      ")]
+          )
+        ])
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Index.vue?vue&type=template&id=bd82ba6a&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Index.vue?vue&type=template&id=bd82ba6a& ***!
@@ -56061,6 +56159,10 @@ var render = function() {
               },
               [_vm._v("\n          Library\n        ")]
             )
+          ]),
+          _vm._v(" "),
+          _c("p", { attrs: { id: recent_game.id } }, [
+            _vm._v(_vm._s(_vm.tooltipMessage))
           ])
         ])
       }),
@@ -56102,14 +56204,6 @@ var render = function() {
             _c("h3", [_vm._v(_vm._s(popular_game.name))])
           ]),
           _vm._v(" "),
-          _c("h4", [
-            _vm._v(
-              "(" +
-                _vm._s(_vm.formatDate(popular_game.first_release_date)) +
-                ")"
-            )
-          ]),
-          _vm._v(" "),
           _c("button", { staticClass: "add-to-collection" }, [
             _vm._v("\n        Add to\n        "),
             _c(
@@ -56137,6 +56231,10 @@ var render = function() {
               },
               [_vm._v("\n          Library\n        ")]
             )
+          ]),
+          _vm._v(" "),
+          _c("p", { attrs: { id: popular_game.id } }, [
+            _vm._v(_vm._s(_vm.tooltipMessage))
           ])
         ])
       }),
@@ -56166,18 +56264,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "collection-container" },
-      _vm._l(_vm.library_games, function(library_game) {
-        return _c("div", { key: library_game.id, staticClass: "flex-single" }, [
-          _c("h3", [_vm._v(_vm._s(library_game.name))])
-        ])
-      }),
-      0
-    )
-  ])
+  return _c(
+    "div",
+    [
+      _c("GamesGrid", {
+        attrs: { games: _vm.library_games, collectionOption: "library" }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56390,55 +56485,60 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "collection-container" },
-            [
-              _c("h3", [_vm._v("Similar Games")]),
-              _vm._v(" "),
-              _vm._l(_vm.game.similar_games, function(similar_game) {
-                return _c(
-                  "div",
-                  { key: similar_game.id, staticClass: "collection-single" },
-                  [
-                    _c("a", { attrs: { href: similar_game.slug } }, [
-                      _vm._v(_vm._s(similar_game.name))
-                    ]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "add-to-collection" }, [
-                      _vm._v("\n            Add to\n            "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "collection-options",
-                          on: {
-                            click: function($event) {
-                              return _vm.addToList(similar_game, "wishlist")
-                            }
-                          }
-                        },
-                        [_vm._v("\n              Wishlist\n            ")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "collection-options",
-                          on: {
-                            click: function($event) {
-                              return _vm.addToList(similar_game, "library")
-                            }
-                          }
-                        },
-                        [_vm._v("\n              Library\n            ")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            ],
-            2
-          )
+          _vm.game.similar_games
+            ? _c(
+                "div",
+                { staticClass: "collection-container" },
+                [
+                  _c("h3", [_vm._v("Similar Games")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.game.similar_games, function(similar_game) {
+                    return _c(
+                      "div",
+                      {
+                        key: similar_game.id,
+                        staticClass: "collection-single"
+                      },
+                      [
+                        _c("a", { attrs: { href: similar_game.slug } }, [
+                          _vm._v(_vm._s(similar_game.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("button", { staticClass: "add-to-collection" }, [
+                          _vm._v("\n            Add to\n            "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "collection-options",
+                              on: {
+                                click: function($event) {
+                                  return _vm.addToList(similar_game, "wishlist")
+                                }
+                              }
+                            },
+                            [_vm._v("\n              Wishlist\n            ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "collection-options",
+                              on: {
+                                click: function($event) {
+                                  return _vm.addToList(similar_game, "library")
+                                }
+                              }
+                            },
+                            [_vm._v("\n              Library\n            ")]
+                          )
+                        ])
+                      ]
+                    )
+                  })
+                ],
+                2
+              )
+            : _vm._e()
         ],
         2
       )
@@ -56467,20 +56567,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "collection-container" },
-      _vm._l(_vm.wishlist_games, function(wishlist_game) {
-        return _c(
-          "div",
-          { key: wishlist_game.id, staticClass: "flex-single" },
-          [_c("h3", [_vm._v(_vm._s(wishlist_game.name))])]
-        )
-      }),
-      0
-    )
-  ])
+  return _c(
+    "div",
+    [
+      _c("GamesGrid", {
+        attrs: { games: _vm.wishlist_games, collectionOption: "wishlist" }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -71622,6 +71717,57 @@ var addToLists = {
         collectionOption: collectionOption
       }).then(function (res) {
         console.log(res.data);
+        var message = res.data.message;
+
+        _this.showTooltip(game.id, message);
+
+        if (res.data.error) {
+          _this.error = res.data.error;
+          alert(_this.error);
+        }
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    showTooltip: function showTooltip(id, message) {
+      var tooltipId = id;
+      var tooltipMessage = document.getElementById(tooltipId);
+
+      if (message !== undefined) {
+        tooltipMessage.innerHTML = message;
+        tooltipMessage.classList.toggle("hidden-message");
+        setTimeout(function () {
+          tooltipMessage.style.display = "none";
+        }, 1500);
+      }
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (addToLists);
+
+/***/ }),
+
+/***/ "./resources/js/Mixins/removeFromLists.js":
+/*!************************************************!*\
+  !*** ./resources/js/Mixins/removeFromLists.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var removeFromLists = {
+  methods: {
+    removeFromList: function removeFromList(game, collectionOption, index) {
+      var _this = this;
+
+      axios.post("http://localhost:8000/game/remove", {
+        game: game,
+        collectionOption: collectionOption
+      }).then(function (res) {
+        console.log(res);
+
+        _this.$delete(_this.games, index);
 
         if (res.data.error) {
           console.log(res.data.error);
@@ -71634,7 +71780,7 @@ var addToLists = {
     }
   }
 };
-/* harmony default export */ __webpack_exports__["default"] = (addToLists);
+/* harmony default export */ __webpack_exports__["default"] = (removeFromLists);
 
 /***/ }),
 
@@ -71652,6 +71798,8 @@ var map = {
 	"./API/Index.vue": "./resources/js/Pages/API/Index.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
+	"./Games/Components/GamesGrid": "./resources/js/Pages/Games/Components/GamesGrid.vue",
+	"./Games/Components/GamesGrid.vue": "./resources/js/Pages/Games/Components/GamesGrid.vue",
 	"./Games/Index": "./resources/js/Pages/Games/Index.vue",
 	"./Games/Index.vue": "./resources/js/Pages/Games/Index.vue",
 	"./Games/Library": "./resources/js/Pages/Games/Library.vue",
@@ -71902,6 +72050,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Games/Components/GamesGrid.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/Pages/Games/Components/GamesGrid.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GamesGrid_vue_vue_type_template_id_68669ae5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GamesGrid.vue?vue&type=template&id=68669ae5& */ "./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5&");
+/* harmony import */ var _GamesGrid_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GamesGrid.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GamesGrid_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GamesGrid_vue_vue_type_template_id_68669ae5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GamesGrid_vue_vue_type_template_id_68669ae5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Games/Components/GamesGrid.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GamesGrid_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GamesGrid.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GamesGrid_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GamesGrid_vue_vue_type_template_id_68669ae5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GamesGrid.vue?vue&type=template&id=68669ae5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GamesGrid_vue_vue_type_template_id_68669ae5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GamesGrid_vue_vue_type_template_id_68669ae5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

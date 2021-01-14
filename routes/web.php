@@ -15,24 +15,31 @@ use App\Http\Resources\Gaming;
 |
 */
 
+Route::middleware(["auth:sanctum", "verified"])
+  ->get("/dashboard", function () {
+    return Inertia\Inertia::render("Dashboard");
+  })
+  ->name("dashboard");
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+Route::get("/", [GamesController::class, "index"]);
 
-Route::get('/', [GamesController::class, 'index']);
+Route::get("/game/{slug}", [GamesController::class, "singleGame"]);
 
-Route::get('/game/{slug}', [GamesController::class, 'singleGame']);
+Route::post("/game/store", [GamesController::class, "storeToList"]);
 
-Route::post('/game/store', [GamesController::class, 'storeToList']);
+Route::post("/game/remove", [GamesController::class, "removeFromList"]);
 
-Route::post('/game/library', [GamesController::class, 'storeToLibrary']);
+Route::post("/game/library", [GamesController::class, "storeToLibrary"]);
 
-Route::get('/search', [GamesController::class, 'search']);
+Route::get("/search", [GamesController::class, "search"]);
 
-Route::any('/results', [GamesController::class, 'searchGame']);
+Route::any("/results", [GamesController::class, "searchGame"]);
 
-Route::get('/wishlist', [GamesController::class, 'displayWishlist']);
+Route::get("/wishlist", [
+  GamesController::class,
+  "displayWishlist",
+])->middleware("auth");
 
-Route::get('/library', [GamesController::class, 'displayLibrary']);
-
+Route::get("/library", [GamesController::class, "displayLibrary"])->middleware(
+  "auth"
+);

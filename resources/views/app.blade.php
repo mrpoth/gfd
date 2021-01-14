@@ -17,7 +17,9 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
-        <nav id="main-nav" class="flex-container">
+    </head>
+    <body class="font-sans antialiased main-container">
+    <nav id="main-nav" class="flex-container">
             <a href="/">Home</a>
             <a href="/search">Search</a>
             <a href="/wishlist">Wishlist</a>
@@ -29,8 +31,6 @@
             <a href="/user/profile">Profile</a>
             @endif
         </nav>
-    </head>
-    <body class="font-sans antialiased main-container">
         @inertia
     </body>
 </html>
