@@ -15,12 +15,12 @@ class CreateWishlistsTable extends Migration
     {
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('game_id')->index()->nullable()->unique();
+            $table->unsignedBigInteger('game_id')->index()->nullable();
             $table->foreign('game_id')->references('igdb_id')->on('videogames');
             $table->unsignedBigInteger('user_id')->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
-
+            $table->unique(['game_id', 'user_id']);
         });
     }
 

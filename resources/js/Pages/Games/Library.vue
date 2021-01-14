@@ -1,34 +1,22 @@
 <template>
   <div>
-    <div class="collection-container">
-      <div
-        class="flex-single"
-        v-for="library_game in library_games"
-        :key="library_game.id"
-      >
-          <h3>{{ library_game.name }}</h3>
-      </div>
-    </div>
+    <GamesGrid
+      v-bind:games="library_games"
+      v-bind:collectionOption="'library'"
+    />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import addToLists from "../../Mixins/addToLists";
+import GamesGrid from "../Games/Components/GamesGrid";
 
 export default {
-  mixins: [addToLists],
+  components: {
+    GamesGrid,
+  },
   props: {
     library_games: Array,
-  },
-  methods: {
-    replaceThumbWithBiggerImage(url) {
-      return url.replace("thumb", "cover_big");
-    },
-    formatDate(date) {
-      let properDate = new Date(date);
-      return properDate.toLocaleDateString();
-    },
   },
 };
 </script>

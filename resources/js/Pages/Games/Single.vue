@@ -5,7 +5,7 @@
         <img
           v-if="game.cover"
           :src="replaceThumbWithBiggerImage(game.cover.url)"
-           v-cosha
+          v-cosha
         />
         <img
           v-else
@@ -32,12 +32,15 @@
           >
             Wishlist
           </button>
-          <button @click="addToList(game, 'library')" class="collection-options">
+          <button
+            @click="addToList(game, 'library')"
+            class="collection-options"
+          >
             Library
           </button>
         </button>
-        <div class="collection-container">
-            <h3>Similar Games</h3>
+        <div class="collection-container" v-if="game.similar_games">
+          <h3>Similar Games</h3>
           <div
             class="collection-single"
             v-for="similar_game in game.similar_games"
@@ -69,20 +72,27 @@
 <script>
 import axios from "axios";
 import addToLists from "../../Mixins/addToLists";
+import removeFromLists from "../../Mixins/removeFromLists";
 
 export default {
-  mixins: [addToLists],
+  mixins: [addToLists, removeFromLists],
+  data() {
+    return {
+      error: "",
+    };
+  },
   props: {
-    game: Object
+    game: Object,
   },
   methods: {
+    // API only returns thumbnails, have to text-replace for different sizes
     replaceThumbWithBiggerImage(url) {
       return url.replace("thumb", "cover_big");
     },
     formatDate(date) {
       let properDate = new Date(date);
       return properDate.toLocaleDateString();
-    }
-  }
+    },
+  },
 };
 </script>

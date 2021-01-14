@@ -9,7 +9,10 @@
       >
         <div v-if="recent_game.cover">
           <a :href="`/game/${recent_game.slug}`">
-            <img :src="replaceThumbWithBiggerImage(recent_game.cover.url)"  v-cosha/>
+            <img
+              :src="replaceThumbWithBiggerImage(recent_game.cover.url)"
+              v-cosha
+            />
           </a>
         </div>
         <div v-else>
@@ -35,6 +38,7 @@
             Library
           </button>
         </button>
+        <p :id="recent_game.id">{{ tooltipMessage }}</p>
       </div>
     </div>
     <h1>Popular Games</h1>
@@ -46,7 +50,10 @@
       >
         <div v-if="popular_game.cover">
           <a :href="`/game/${popular_game.slug}`">
-            <img :src="replaceThumbWithBiggerImage(popular_game.cover.url)" v-cosha />
+            <img
+              :src="replaceThumbWithBiggerImage(popular_game.cover.url)"
+              v-cosha
+            />
           </a>
         </div>
         <div v-else>
@@ -59,7 +66,6 @@
         <a :href="`/game/${popular_game.slug}`">
           <h3>{{ popular_game.name }}</h3>
         </a>
-        <h4>({{ formatDate(popular_game.first_release_date) }})</h4>
         <button class="add-to-collection">
           Add to
           <button
@@ -72,6 +78,7 @@
             Library
           </button>
         </button>
+        <p :id="popular_game.id">{{ tooltipMessage }}</p>
       </div>
     </div>
   </div>
@@ -83,10 +90,15 @@ import addToLists from "../../Mixins/addToLists";
 
 export default {
   mixins: [addToLists],
+  data() {
+    return {
+      error: "",
+      tooltipMessage: "",
+    };
+  },
   props: {
     recent_games: Array,
     popular_games: Array,
-    error: String
   },
   methods: {
     replaceThumbWithBiggerImage(url) {
@@ -96,15 +108,6 @@ export default {
       let properDate = new Date(date);
       return properDate.toLocaleDateString();
     },
-    // displayOnClick() {
-    //   let targetId = event.target.id;
-    //   let selector = `#${targetId} + .collection-options`;
-    //   let collectionOptions = document.querySelector(selector);
-    //   collectionOptions.style.display =
-    //     collectionOptions.style.display === "inline-block"
-    //       ? "none"
-    //       : "inline-block";
-    // }
-  }
+  },
 };
 </script>
