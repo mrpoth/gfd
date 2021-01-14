@@ -50,12 +50,14 @@ class GamesController extends Controller
       ]);
     }
     try {
-      Videogame::updateOrCreate([
-        "name" => $game["name"],
-        "slug" => $game["slug"],
-        "cover_url" => $game["cover"]["url"] ?? null,
-        "igdb_id" => $game["id"],
-      ]);
+      Videogame::updateOrCreate(
+        ["igdb_id" => $game["id"]],
+        [
+          "name" => $game["name"],
+          "slug" => $game["slug"],
+          "cover_url" => $game["cover"]["url"] ?? null,
+        ]
+      );
     } catch (Exception $e) {
       return $e->getMessage();
     }

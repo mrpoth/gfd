@@ -69,9 +69,20 @@ class Videogame extends Model
 
   public static function showSingleGame($game_slug)
   {
-    return Game::where("slug", "=", $game_slug)
+    $single_game = Game::where("slug", "=", $game_slug)
       ->with(["similar_games", "genres", "cover" => ["url", "image_id"]])
       ->with(["websites" => ["url", "category"]])
       ->get();
+
+    Videogame::updateOrCreate(
+      ["igdb_id" => $single_game[0]["id"]],
+      [
+        "name" => $single_game[0]["name"],
+        "slug" => $single_game[0]["slug"],
+        "cover_url" => $single_game[0]["cover"]["url"] ?? null,
+      ]
+    );
+
+    return $single_game;
   }
 }

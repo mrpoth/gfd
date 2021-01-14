@@ -21,7 +21,8 @@ class CreateVideogamesTable extends Migration
       $table
         ->unsignedBigInteger("igdb_id")
         ->index()
-        ->nullable();
+        ->nullable()
+        ->unique();
       $table->timestamps();
     });
   }

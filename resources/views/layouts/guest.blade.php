@@ -33,7 +33,7 @@
         <a href="/user/profile">Profile</a>
         @endif
     </nav>
-    <div class="font-sans text-gray-900 antialiased">
+    <div class="font-sans text-white-900 antialiased">
         {{ $slot }}
     </div>
 </body>
