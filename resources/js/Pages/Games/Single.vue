@@ -85,6 +85,7 @@ export default {
     game: Object,
   },
   methods: {
+    // API only returns thumbnails, have to text-replace for different sizes
     replaceThumbWithBiggerImage(url) {
       return url.replace("thumb", "cover_big");
     },
