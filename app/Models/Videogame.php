@@ -41,7 +41,7 @@ class Videogame extends Model
 
     return Game::whereBetween("first_release_date", $three_months_ago, $now)
       ->where("aggregated_rating", ">", 0)
-      ->where("aggregated_rating_count", ">", "10")
+      ->where("aggregated_rating_count", ">=", "10")
       ->orderBy("aggregated_rating", "desc")
       ->with(["cover" => ["url", "image_id"]])
       ->limit(8)

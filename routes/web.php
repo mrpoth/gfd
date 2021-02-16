@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\CollectionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\LibrariesController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\WishlistsController;
 use App\Http\Resources\Gaming;
 
 /*
@@ -25,21 +29,24 @@ Route::get("/", [GamesController::class, "index"]);
 
 Route::get("/game/{slug}", [GamesController::class, "singleGame"]);
 
-Route::post("/game/store", [GamesController::class, "storeToList"]);
+Route::post("/game/store", [CollectionsController::class, "storeToList"]);
 
-Route::post("/game/remove", [GamesController::class, "removeFromList"]);
+Route::post("/game/remove", [CollectionsController::class, "removeFromList"]);
 
-Route::post("/game/library", [GamesController::class, "storeToLibrary"]);
+Route::get("/search", [SearchController::class, "search"]);
 
-Route::get("/search", [GamesController::class, "search"]);
-
-Route::any("/results", [GamesController::class, "searchGame"]);
+Route::any("/results", [SearchController::class, "searchGame"]);
 
 Route::get("/wishlist", [
-  GamesController::class,
+  WishlistsController::class,
   "displayWishlist",
 ])->middleware("auth");
 
-Route::get("/library", [GamesController::class, "displayLibrary"])->middleware(
-  "auth"
-);
+Route::get("/library", [
+  LibrariesController::class,
+  "displayLibrary",
+])->middleware("auth");
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return Inertia\Inertia::render('Dashboard');
+})->name('dashboard');

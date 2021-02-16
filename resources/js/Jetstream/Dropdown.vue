@@ -38,7 +38,7 @@
                 default: '48'
             },
             contentClasses: {
-                default: () => ['py-1', '']
+                default: () => ['py-1', 'bg-white']
             }
         },
 

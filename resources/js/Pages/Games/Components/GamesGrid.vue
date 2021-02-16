@@ -13,7 +13,7 @@
           <h3>{{ game.name }}</h3>
         </a>
         <button
-          class="add-to-collection"
+          class="remove-from-collection"
           @click="removeFromList(game, collectionOption, index)"
         >
           Remove

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Recent Games</h1>
+    <h2>Recent Games</h2>
     <div class="games-grid">
       <div
         class="game-single"
@@ -38,10 +38,20 @@
             Library
           </button>
         </button>
+        <select
+          name="mobile-collection-options"
+          @change="addToList(recent_game, $event.target.value)"
+          id="mobile-collection"
+          class="mobile-collection-options"
+        >
+          <option value="" disabled selected hidden>Add to</option>
+          <option value="wishlist">Wishlist</option>
+          <option value="library">Library</option>
+        </select>
         <p :id="recent_game.id">{{ tooltipMessage }}</p>
       </div>
     </div>
-    <h1>Popular Games</h1>
+    <h2>Popular Games</h2>
     <div class="games-grid">
       <div
         class="game-single"
@@ -78,6 +88,16 @@
             Library
           </button>
         </button>
+        <select
+          name="mobile-collection-options"
+          @change="addToList(popular_game.$event.target.value)"
+          id="mobile-collection"
+          class="mobile-collection-options"
+        >
+          <option value="" disabled selected hidden>Add to</option>
+          <option value="wishlist">Wishlist</option>
+          <option value="library">Library</option>
+        </select>
         <p :id="popular_game.id">{{ tooltipMessage }}</p>
       </div>
     </div>

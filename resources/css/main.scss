@@ -1,7 +1,24 @@
 //
 
 $blue: #008080;
-
+// W3C recommended headers
+$heading_one: 2em;
+$heading_two: 1.5em;
+$heading_three: 1.17em;
+$heading_four: 1.12em;
+$heading_five: 0.83em;
+@mixin green-button {
+  border-radius: 15px;
+  padding: 2px 10px;
+  font-size: 15px;
+  border: none;
+  text-align: center;
+  transition: 0.5s;
+  background: #63a583;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 5px;
+}
 pre {
   color: $blue;
 }
@@ -50,6 +67,9 @@ h3 {
   h4 {
     font-size: 12px;
   }
+  h3 {
+    white-space: nowrap;
+  }
 }
 
 .flex-single {
@@ -66,9 +86,9 @@ h3 {
   width: 75rem;
   margin: 0 auto;
   max-width: 100%;
-  h1 {
+  h2 {
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -79,6 +99,30 @@ h3 {
   justify-content: center;
 }
 .add-to-collection {
+  @include green-button;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:hover .collection-options,
+  &:active {
+    display: inline-block;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.remove-from-collection {
+  @include green-button;
+}
+
+.collection-options {
+  display: none;
+  text-decoration: underline;
+}
+
+.mobile-collection-options {
+  appearance: none;
   border-radius: 15px;
   padding: 2px 10px;
   font-size: 15px;
@@ -88,22 +132,10 @@ h3 {
   background: #63a583;
   color: #fff;
   font-weight: bold;
-  margin: 0 5px;
-  &:hover {
-    transform: scale(1.1);
+  margin: 0px 5px;
+  @media (min-width: 769px) {
+    display: none;
   }
-  &:hover .collection-options,
-  &:active {
-    display: inline-block;
-  }
-  // &:after {
-  //     content: "\2192";
-  // }
-}
-
-.collection-options {
-  display: none;
-  text-decoration: underline;
 }
 
 .single-result {
@@ -128,7 +160,7 @@ ul.similar-games {
 #main-nav {
   a {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
   }
 }

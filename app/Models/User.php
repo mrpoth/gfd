@@ -58,14 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    // public function videogames()
-    // {
-    //     return $this->belongsToMany(Videogame::class, 'user_videogame', 'user_id', 'game_id')->withPivot('library', 'wishlist')->withTimestamps();
-    // }
-
-    public function wishlist()
-    {
-        return $this->hasOne(Wishlist::class);
-    }
 }
