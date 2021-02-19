@@ -3445,6 +3445,61 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_0__["default"]],
+  name: "AddToCollection",
+  props: {
+    game: Object
+  },
+  data: function data() {
+    return {
+      error: "",
+      tooltipMessage: ""
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=script&lang=js& ***!
@@ -3508,51 +3563,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _Games_Components_AddToCollection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Games/Components/AddToCollection */ "./resources/js/Pages/Games/Components/AddToCollection.vue");
 //
 //
 //
@@ -3618,7 +3629,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  components: {
+    AddToCollection: _Games_Components_AddToCollection__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       error: "",
@@ -3687,17 +3700,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _Games_Components_AddToCollection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Games/Components/AddToCollection */ "./resources/js/Pages/Games/Components/AddToCollection.vue");
 //
 //
 //
@@ -3719,7 +3722,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  components: {
+    AddToCollection: _Games_Components_AddToCollection__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     search_games: Array
   },
@@ -3776,36 +3781,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/addToLists */ "./resources/js/Mixins/addToLists.js");
-/* harmony import */ var _Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Mixins/removeFromLists */ "./resources/js/Mixins/removeFromLists.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Mixins/removeFromLists */ "./resources/js/Mixins/removeFromLists.js");
+/* harmony import */ var _Games_Components_AddToCollection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Games/Components/AddToCollection */ "./resources/js/Pages/Games/Components/AddToCollection.vue");
 //
 //
 //
@@ -3853,7 +3830,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [_Mixins_addToLists__WEBPACK_IMPORTED_MODULE_1__["default"], _Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  components: {
+    AddToCollection: _Games_Components_AddToCollection__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  mixins: [_Mixins_removeFromLists__WEBPACK_IMPORTED_MODULE_1__["default"]],
   data: function data() {
     return {
       error: ""
@@ -48182,6 +48162,87 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=template&id=2e5319f8&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=template&id=2e5319f8& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("button", { staticClass: "add-to-collection" }, [
+      _vm._v("\n    Add to\n    "),
+      _c(
+        "button",
+        {
+          staticClass: "collection-options",
+          on: {
+            click: function($event) {
+              return _vm.addToList(_vm.game, "wishlist")
+            }
+          }
+        },
+        [_vm._v("\n      Wishlist\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "collection-options",
+          on: {
+            click: function($event) {
+              return _vm.addToList(_vm.game)
+            }
+          }
+        },
+        [_vm._v("\n      Library\n    ")]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        staticClass: "mobile-collection-options",
+        attrs: { name: "mobile-collection-options", id: "mobile-collection" },
+        on: {
+          change: function($event) {
+            return _vm.addToList(_vm.game, $event.target.value)
+          }
+        }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", disabled: "", selected: "", hidden: "" } },
+          [_vm._v("Add to")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "wishlist" } }, [_vm._v("Wishlist")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "library" } }, [_vm._v("Library")])
+      ]
+    ),
+    _vm._v(" "),
+    _c("p", { attrs: { id: _vm.game.id } }, [
+      _vm._v(_vm._s(_vm.tooltipMessage))
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Games/Components/GamesGrid.vue?vue&type=template&id=68669ae5& ***!
@@ -48265,105 +48326,50 @@ var render = function() {
       "div",
       { staticClass: "games-grid" },
       _vm._l(_vm.recent_games, function(recent_game) {
-        return _c("div", { key: recent_game.id, staticClass: "game-single" }, [
-          recent_game.cover
-            ? _c("div", [
-                _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
-                  _c("img", {
-                    directives: [{ name: "cosha", rawName: "v-cosha" }],
-                    attrs: {
-                      src: _vm.replaceThumbWithBiggerImage(
-                        recent_game.cover.url
-                      )
-                    }
-                  })
+        return _c(
+          "div",
+          { key: recent_game.id, staticClass: "game-single" },
+          [
+            recent_game.cover
+              ? _c("div", [
+                  _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
+                    _c("img", {
+                      directives: [{ name: "cosha", rawName: "v-cosha" }],
+                      attrs: {
+                        src: _vm.replaceThumbWithBiggerImage(
+                          recent_game.cover.url
+                        )
+                      }
+                    })
+                  ])
                 ])
-              ])
-            : _c("div", [
-                _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "https://cdn.pixabay.com/photo/2020/08/04/18/58/controller-5463628__340.png"
-                    }
-                  })
-                ])
-              ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
-            _c("h3", [_vm._v(_vm._s(recent_game.name))])
-          ]),
-          _vm._v(" "),
-          _c("h4", [
-            _vm._v(
-              "(" + _vm._s(_vm.formatDate(recent_game.first_release_date)) + ")"
-            )
-          ]),
-          _vm._v(" "),
-          _c("button", { staticClass: "add-to-collection" }, [
-            _vm._v("\n        Add to\n        "),
-            _c(
-              "button",
-              {
-                staticClass: "collection-options",
-                on: {
-                  click: function($event) {
-                    return _vm.addToList(recent_game, "wishlist")
-                  }
-                }
-              },
-              [_vm._v("\n          Wishlist\n        ")]
-            ),
+              : _c("div", [
+                  _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
+                    _c("img", {
+                      attrs: {
+                        src:
+                          "https://cdn.pixabay.com/photo/2020/08/04/18/58/controller-5463628__340.png"
+                      }
+                    })
+                  ])
+                ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "collection-options",
-                on: {
-                  click: function($event) {
-                    return _vm.addToList(recent_game)
-                  }
-                }
-              },
-              [_vm._v("\n          Library\n        ")]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "mobile-collection-options",
-              attrs: {
-                name: "mobile-collection-options",
-                id: "mobile-collection"
-              },
-              on: {
-                change: function($event) {
-                  return _vm.addToList(recent_game, $event.target.value)
-                }
-              }
-            },
-            [
-              _c(
-                "option",
-                {
-                  attrs: { value: "", disabled: "", selected: "", hidden: "" }
-                },
-                [_vm._v("Add to")]
-              ),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "wishlist" } }, [
-                _vm._v("Wishlist")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "library" } }, [_vm._v("Library")])
-            ]
-          ),
-          _vm._v(" "),
-          _c("p", { attrs: { id: recent_game.id } }, [
-            _vm._v(_vm._s(_vm.tooltipMessage))
-          ])
-        ])
+            _c("a", { attrs: { href: "/game/" + recent_game.slug } }, [
+              _c("h3", [_vm._v(_vm._s(recent_game.name))])
+            ]),
+            _vm._v(" "),
+            _c("h4", [
+              _vm._v(
+                "(" +
+                  _vm._s(_vm.formatDate(recent_game.first_release_date)) +
+                  ")"
+              )
+            ]),
+            _vm._v(" "),
+            _c("AddToCollection", { attrs: { game: recent_game } })
+          ],
+          1
+        )
       }),
       0
     ),
@@ -48374,99 +48380,42 @@ var render = function() {
       "div",
       { staticClass: "games-grid" },
       _vm._l(_vm.popular_games, function(popular_game) {
-        return _c("div", { key: popular_game.id, staticClass: "game-single" }, [
-          popular_game.cover
-            ? _c("div", [
-                _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
-                  _c("img", {
-                    directives: [{ name: "cosha", rawName: "v-cosha" }],
-                    attrs: {
-                      src: _vm.replaceThumbWithBiggerImage(
-                        popular_game.cover.url
-                      )
-                    }
-                  })
+        return _c(
+          "div",
+          { key: popular_game.id, staticClass: "game-single" },
+          [
+            popular_game.cover
+              ? _c("div", [
+                  _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
+                    _c("img", {
+                      directives: [{ name: "cosha", rawName: "v-cosha" }],
+                      attrs: {
+                        src: _vm.replaceThumbWithBiggerImage(
+                          popular_game.cover.url
+                        )
+                      }
+                    })
+                  ])
                 ])
-              ])
-            : _c("div", [
-                _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "https://cdn.pixabay.com/photo/2020/08/04/18/58/controller-5463628__340.png"
-                    }
-                  })
-                ])
-              ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
-            _c("h3", [_vm._v(_vm._s(popular_game.name))])
-          ]),
-          _vm._v(" "),
-          _c("button", { staticClass: "add-to-collection" }, [
-            _vm._v("\n        Add to\n        "),
-            _c(
-              "button",
-              {
-                staticClass: "collection-options",
-                on: {
-                  click: function($event) {
-                    return _vm.addToList(popular_game, "wishlist")
-                  }
-                }
-              },
-              [_vm._v("\n          Wishlist\n        ")]
-            ),
+              : _c("div", [
+                  _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
+                    _c("img", {
+                      attrs: {
+                        src:
+                          "https://cdn.pixabay.com/photo/2020/08/04/18/58/controller-5463628__340.png"
+                      }
+                    })
+                  ])
+                ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "collection-options",
-                on: {
-                  click: function($event) {
-                    return _vm.addToList(popular_game)
-                  }
-                }
-              },
-              [_vm._v("\n          Library\n        ")]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "mobile-collection-options",
-              attrs: {
-                name: "mobile-collection-options",
-                id: "mobile-collection"
-              },
-              on: {
-                change: function($event) {
-                  return _vm.addToList(popular_game.$event.target.value)
-                }
-              }
-            },
-            [
-              _c(
-                "option",
-                {
-                  attrs: { value: "", disabled: "", selected: "", hidden: "" }
-                },
-                [_vm._v("Add to")]
-              ),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "wishlist" } }, [
-                _vm._v("Wishlist")
-              ]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "library" } }, [_vm._v("Library")])
-            ]
-          ),
-          _vm._v(" "),
-          _c("p", { attrs: { id: popular_game.id } }, [
-            _vm._v(_vm._s(_vm.tooltipMessage))
-          ])
-        ])
+            _c("a", { attrs: { href: "/game/" + popular_game.slug } }, [
+              _c("h3", [_vm._v(_vm._s(popular_game.name))])
+            ]),
+            _vm._v(" "),
+            _c("AddToCollection", { attrs: { game: popular_game } })
+          ],
+          1
+        )
       }),
       0
     )
@@ -48539,35 +48488,9 @@ var render = function() {
               _c("h3", [_vm._v(_vm._s(search_game.name))])
             ]),
             _vm._v(" "),
-            _c("button", { staticClass: "add-to-collection" }, [
-              _vm._v("\n        Add to\n        "),
-              _c(
-                "button",
-                {
-                  staticClass: "collection-options",
-                  on: {
-                    click: function($event) {
-                      return _vm.addToList(search_game, "wishlist")
-                    }
-                  }
-                },
-                [_vm._v("\n          Wishlist\n        ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "collection-options",
-                  on: {
-                    click: function($event) {
-                      return _vm.addToList(search_game)
-                    }
-                  }
-                },
-                [_vm._v("\n          Library\n        ")]
-              )
-            ])
-          ]
+            _c("AddToCollection", { attrs: { game: search_game } })
+          ],
+          1
         )
       }),
       0
@@ -48686,34 +48609,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(_vm.game.summary))]),
           _vm._v(" "),
-          _c("button", { staticClass: "add-to-collection" }, [
-            _vm._v("\n        Add to\n        "),
-            _c(
-              "button",
-              {
-                staticClass: "collection-options",
-                on: {
-                  click: function($event) {
-                    return _vm.addToList(_vm.game, "wishlist")
-                  }
-                }
-              },
-              [_vm._v("\n          Wishlist\n        ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "collection-options",
-                on: {
-                  click: function($event) {
-                    return _vm.addToList(_vm.game, "library")
-                  }
-                }
-              },
-              [_vm._v("\n          Library\n        ")]
-            )
-          ]),
+          _c("AddToCollection", { attrs: { game: _vm.game } }),
           _vm._v(" "),
           _vm.game.similar_games
             ? _c(
@@ -48734,35 +48630,9 @@ var render = function() {
                           _vm._v(_vm._s(similar_game.name))
                         ]),
                         _vm._v(" "),
-                        _c("button", { staticClass: "add-to-collection" }, [
-                          _vm._v("\n            Add to\n            "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "collection-options",
-                              on: {
-                                click: function($event) {
-                                  return _vm.addToList(similar_game, "wishlist")
-                                }
-                              }
-                            },
-                            [_vm._v("\n              Wishlist\n            ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "collection-options",
-                              on: {
-                                click: function($event) {
-                                  return _vm.addToList(similar_game, "library")
-                                }
-                              }
-                            },
-                            [_vm._v("\n              Library\n            ")]
-                          )
-                        ])
-                      ]
+                        _c("AddToCollection", { attrs: { game: similar_game } })
+                      ],
+                      1
                     )
                   })
                 ],
@@ -63897,6 +63767,8 @@ var map = {
 	"./API/Index.vue": "./resources/js/Pages/API/Index.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
+	"./Games/Components/AddToCollection": "./resources/js/Pages/Games/Components/AddToCollection.vue",
+	"./Games/Components/AddToCollection.vue": "./resources/js/Pages/Games/Components/AddToCollection.vue",
 	"./Games/Components/GamesGrid": "./resources/js/Pages/Games/Components/GamesGrid.vue",
 	"./Games/Components/GamesGrid.vue": "./resources/js/Pages/Games/Components/GamesGrid.vue",
 	"./Games/Index": "./resources/js/Pages/Games/Index.vue",
@@ -64149,6 +64021,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_097ba13b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Games/Components/AddToCollection.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Pages/Games/Components/AddToCollection.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AddToCollection_vue_vue_type_template_id_2e5319f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddToCollection.vue?vue&type=template&id=2e5319f8& */ "./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=template&id=2e5319f8&");
+/* harmony import */ var _AddToCollection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddToCollection.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AddToCollection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AddToCollection_vue_vue_type_template_id_2e5319f8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AddToCollection_vue_vue_type_template_id_2e5319f8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Games/Components/AddToCollection.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddToCollection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AddToCollection.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddToCollection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=template&id=2e5319f8&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=template&id=2e5319f8& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddToCollection_vue_vue_type_template_id_2e5319f8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AddToCollection.vue?vue&type=template&id=2e5319f8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Games/Components/AddToCollection.vue?vue&type=template&id=2e5319f8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddToCollection_vue_vue_type_template_id_2e5319f8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddToCollection_vue_vue_type_template_id_2e5319f8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
