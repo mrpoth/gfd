@@ -9,18 +9,8 @@
         <a :href="`/game/${search_game.slug}`">
           <h3>{{ search_game.name }}</h3>
         </a>
-        <button class="add-to-collection">
-          Add to
-          <button
-            @click="addToList(search_game, 'wishlist')"
-            class="collection-options"
-          >
-            Wishlist
-          </button>
-          <button @click="addToList(search_game)" class="collection-options">
-            Library
-          </button>
-        </button>
+         <AddToCollection v-bind:game="search_game" />
+
       </div>
     </div>
   </div>
@@ -28,10 +18,12 @@
 
 <script>
 import axios from "axios";
-import addToLists from "../../Mixins/addToLists";
+import AddToCollection from "../Games/Components/AddToCollection";
 
 export default {
-  mixins: [addToLists],
+    components: {
+    AddToCollection,
+  },
   props: {
     search_games: Array,
   },

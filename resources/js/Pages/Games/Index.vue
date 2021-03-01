@@ -26,29 +26,7 @@
           <h3>{{ recent_game.name }}</h3>
         </a>
         <h4>({{ formatDate(recent_game.first_release_date) }})</h4>
-        <button class="add-to-collection">
-          Add to
-          <button
-            @click="addToList(recent_game, 'wishlist')"
-            class="collection-options"
-          >
-            Wishlist
-          </button>
-          <button @click="addToList(recent_game)" class="collection-options">
-            Library
-          </button>
-        </button>
-        <select
-          name="mobile-collection-options"
-          @change="addToList(recent_game, $event.target.value)"
-          id="mobile-collection"
-          class="mobile-collection-options"
-        >
-          <option value="" disabled selected hidden>Add to</option>
-          <option value="wishlist">Wishlist</option>
-          <option value="library">Library</option>
-        </select>
-        <p :id="recent_game.id">{{ tooltipMessage }}</p>
+        <AddToCollection v-bind:game="recent_game" />
       </div>
     </div>
     <h2>Popular Games</h2>
@@ -76,29 +54,7 @@
         <a :href="`/game/${popular_game.slug}`">
           <h3>{{ popular_game.name }}</h3>
         </a>
-        <button class="add-to-collection">
-          Add to
-          <button
-            @click="addToList(popular_game, 'wishlist')"
-            class="collection-options"
-          >
-            Wishlist
-          </button>
-          <button @click="addToList(popular_game)" class="collection-options">
-            Library
-          </button>
-        </button>
-        <select
-          name="mobile-collection-options"
-          @change="addToList(popular_game.$event.target.value)"
-          id="mobile-collection"
-          class="mobile-collection-options"
-        >
-          <option value="" disabled selected hidden>Add to</option>
-          <option value="wishlist">Wishlist</option>
-          <option value="library">Library</option>
-        </select>
-        <p :id="popular_game.id">{{ tooltipMessage }}</p>
+        <AddToCollection v-bind:game="popular_game" />
       </div>
     </div>
   </div>
@@ -106,10 +62,12 @@
 
 <script>
 import axios from "axios";
-import addToLists from "../../Mixins/addToLists";
+import AddToCollection from "../Games/Components/AddToCollection";
 
 export default {
-  mixins: [addToLists],
+    components: {
+    AddToCollection,
+  },
   data() {
     return {
       error: "",

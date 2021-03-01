@@ -24,21 +24,7 @@
         </p>
         <h3>Release Date: {{ formatDate(game.first_release_date) }}</h3>
         <p>{{ game.summary }}</p>
-        <button class="add-to-collection">
-          Add to
-          <button
-            @click="addToList(game, 'wishlist')"
-            class="collection-options"
-          >
-            Wishlist
-          </button>
-          <button
-            @click="addToList(game, 'library')"
-            class="collection-options"
-          >
-            Library
-          </button>
-        </button>
+        <AddToCollection v-bind:game="game" />
         <div class="collection-container" v-if="game.similar_games">
           <h3>Similar Games</h3>
           <div
@@ -47,21 +33,7 @@
             :key="similar_game.id"
           >
             <a :href="similar_game.slug">{{ similar_game.name }}</a>
-            <button class="add-to-collection">
-              Add to
-              <button
-                @click="addToList(similar_game, 'wishlist')"
-                class="collection-options"
-              >
-                Wishlist
-              </button>
-              <button
-                @click="addToList(similar_game, 'library')"
-                class="collection-options"
-              >
-                Library
-              </button>
-            </button>
+            <AddToCollection v-bind:game="similar_game" />
           </div>
         </div>
       </div>
@@ -71,11 +43,14 @@
 
 <script>
 import axios from "axios";
-import addToLists from "../../Mixins/addToLists";
 import removeFromLists from "../../Mixins/removeFromLists";
+import AddToCollection from "../Games/Components/AddToCollection";
 
 export default {
-  mixins: [addToLists, removeFromLists],
+    components: {
+    AddToCollection,
+  },
+  mixins: [ removeFromLists],
   data() {
     return {
       error: "",
