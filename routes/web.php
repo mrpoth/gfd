@@ -4,6 +4,7 @@ use App\Http\Controllers\CollectionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\LibrariesController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\WishlistsController;
 use App\Http\Resources\Gaming;
@@ -32,6 +33,9 @@ Route::get("/game/{slug}", [GamesController::class, "singleGame"]);
 Route::post("/game/store", [CollectionsController::class, "storeToList"]);
 
 Route::post("/game/remove", [CollectionsController::class, "removeFromList"]);
+
+Route::get("/game/{videogame}/reviews", [ReviewsController::class, "index"]);
+Route::post("/game/{videogame}/reviews", [ReviewsController::class, "store"]);
 
 Route::get("/search", [SearchController::class, "search"]);
 

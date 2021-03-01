@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use MarcReichel\IGDBLaravel\Models\Game;
 use Illuminate\Support\Carbon;
 
@@ -12,6 +13,11 @@ class Videogame extends Model
   use HasFactory;
 
   protected $guarded = [];
+
+  public function reviews(): HasMany
+  {
+      return $this->hasMany(Review::class, 'game_id', 'id');
+  }
 
   public function wishlist()
   {
@@ -74,7 +80,7 @@ class Videogame extends Model
       ->with(["websites" => ["url", "category"]])
       ->get();
 
-    Videogame::updateOrCreate(
+    $videogame = Videogame::updateOrCreate(
       ["igdb_id" => $single_game[0]["id"]],
       [
         "name" => $single_game[0]["name"],
@@ -83,6 +89,9 @@ class Videogame extends Model
       ]
     );
 
-    return $single_game;
+    return [
+      'id' => $videogame->id,
+      'data' => $single_game[0]
+    ];
   }
 }

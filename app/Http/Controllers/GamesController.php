@@ -43,7 +43,7 @@ class GamesController extends Controller
     $game = Videogame::showSingleGame($input);
 
     return Inertia::render("Games/Single", [
-      "game" => $game[0],
+      "game" => $game,
     ]);
   }
 }
