@@ -4,6 +4,7 @@ use App\Http\Controllers\CollectionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\LibrariesController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\WishlistsController;
 use App\Http\Resources\Gaming;
@@ -27,7 +28,9 @@ Route::middleware(["auth:sanctum", "verified"])
 
 Route::get("/", [GamesController::class, "index"]);
 
-Route::get("/game/{slug}", [GamesController::class, "singleGame"]);
+Route::get("/game/{slug}", [GamesController::class, "singleGame"])->name(
+  "single_game"
+);
 
 Route::post("/game/store", [CollectionsController::class, "storeToList"]);
 
@@ -47,6 +50,15 @@ Route::get("/library", [
   "displayLibrary",
 ])->middleware("auth");
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+Route::get("/review", [
+  ReviewsController::class,
+  "displayReviews",
+]);
+
+Route::middleware(["auth:sanctum", "verified"])
+  ->get("/dashboard", function () {
+    return Inertia\Inertia::render("Dashboard");
+  })
+  ->name("dashboard");
+
+Route::post("/review", [ReviewsController::class, "store"])->middleware("auth");

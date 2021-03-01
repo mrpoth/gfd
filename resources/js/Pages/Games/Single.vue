@@ -25,6 +25,8 @@
         <h3>Release Date: {{ formatDate(game.first_release_date) }}</h3>
         <p>{{ game.summary }}</p>
         <AddToCollection v-bind:game="game" />
+        <ReviewForm v-bind:game="game" />
+        <UserReviews v-bind:game_id="game.id"/>
         <div class="collection-container" v-if="game.similar_games">
           <h3>Similar Games</h3>
           <div
@@ -42,13 +44,16 @@
 </template>
 
 <script>
-import axios from "axios";
 import removeFromLists from "../../Mixins/removeFromLists";
 import AddToCollection from "../Games/Components/AddToCollection";
+import ReviewForm from "../Games/Components/ReviewForm";
+import UserReviews from "../Games/Components/UserReviews";
 
 export default {
     components: {
     AddToCollection,
+    ReviewForm,
+    UserReviews
   },
   mixins: [ removeFromLists],
   data() {

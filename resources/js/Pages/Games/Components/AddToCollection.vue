@@ -2,10 +2,7 @@
   <div>
     <button class="add-to-collection">
       Add to
-      <button
-        @click="addToList(game, 'wishlist')"
-        class="collection-options"
-      >
+      <button @click="addToList(game, 'wishlist')" class="collection-options">
         Wishlist
       </button>
       <button @click="addToList(game)" class="collection-options">
